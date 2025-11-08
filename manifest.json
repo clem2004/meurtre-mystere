@@ -1,7 +1,6 @@
 {
   "name": "Boîte de Réception - JFTech",
   "short_name": "JFTech",
-  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#002200",
