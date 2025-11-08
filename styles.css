@@ -55,8 +55,15 @@ body::after {
 
 /* Mobile behavior: when a message is opened on small screens, hide the list and expand the message */
 @media (max-width: 767px) {
+  /* When a message is opened (body.mobile-open) hide the list and show the reader */
   body.mobile-open #email-list-column {
     display: none;
+  }
+
+  body.mobile-open #reader-panel {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
   }
 
   body.mobile-open #email-content {
@@ -67,6 +74,11 @@ body::after {
 
   body.mobile-open #welcome-message {
     display: none !important;
+  }
+
+  /* Default on mobile when NOT in mobile-open: hide the reader panel so only the selection list is visible */
+  body:not(.mobile-open) #reader-panel {
+    display: none;
   }
 }
 

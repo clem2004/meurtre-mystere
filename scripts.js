@@ -76,7 +76,7 @@ function displayEmail(id) {
     </div>
     
     <!-- Corps du courriel -->
-    <div class="flex-1 text-base leading-relaxed">
+    <div class="flex-1 text-base leading-relaxed pb-4">
         ${bodyHtml}
     </div>
   `;
