@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boîte de Réception - [ACCÈS SÉCURISÉ]</title>
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-black text-green-400 h-full flex flex-col p-4 md:p-6 space-y-4">
+    <!-- En-tête de l'interface -->
+    <header class="border-2 border-green-500 p-3 flex justify-between items-center text-glow">
+      <h1 class="text-xl md:text-2xl font-bold">[ TERMINAL DE MESSAGERIE JFTech ]</h1>
+      <div class="text-xs">
+        <p>STATUT: <span class="text-red-500 font-bold animate-pulse">COURRIELS VULNÉRABLES</span></p>
+        <p>MOT DE PASSE DE LA VICTIME: [Claudie450!]</p>
+      </div>
+    </header>
+
+    <!-- Conteneur principal (Liste et Panneau) -->
+    <div class="flex-1 flex flex-col md:flex-row gap-4 min-h-0">
+      <!-- Colonne de la liste des emails -->
+      <div id="email-list-column" class="w-full md:w-1/3 lg:w-1/4 border-2 border-green-500 p-2 overflow-y-auto">
+        <h2 class="text-lg font-bold mb-3 p-2 text-glow border-b border-green-500/50">BOÎTE DE RÉCEPTION (10)</h2>
+        <nav id="email-list" class="space-y-1">
+          <!-- Les emails seront injectés ici par JS -->
+        </nav>
+      </div>
+
+      <!-- Panneau de lecture de l'email -->
+      <div
+        class="w-full md:w-2/3 lg:w-3/4 border-2 border-green-500 p-4 md:p-6 overflow-y-auto flex flex-col"
+      >
+        <div id="welcome-message" class="h-full flex flex-col justify-center items-center">
+          <svg
+            class="w-16 h-16 text-green-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.876c1.525 0 2.75-1.225 2.75-2.75V7.75c0-1.525-1.225-2.75-2.75-2.75H5.063c-1.525 0-2.75 1.225-2.75 2.75v8.5c0 1.525 1.225 2.75 2.75 2.75z"
+            ></path>
+          </svg>
+          <h2 class="text-2xl mt-4 text-glow text-center">> Veuillez sélectionner un message à décrypter.</h2>
+        </div>
+
+        <div id="email-content" class="hidden flex-1 flex-col">
+          <!-- Le contenu de l'email sélectionné sera injecté ici -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="text-center text-xs text-green-700 pt-2">
+      <p>SYSTEM v1.3.37 | > JFTech - Tous droits réservés</p>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+  </body>
+</html>

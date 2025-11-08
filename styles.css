@@ -1,0 +1,72 @@
+/* Définition de la police "hacker" et des couleurs */
+body {
+  font-family: "Courier New", Courier, monospace; /* Police Monospace classique */
+}
+
+/* Style pour l'effet "scanline" (lignes de balayage) optionnel */
+body::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(27, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 20px; /* Taille des lignes */
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.3; /* Opacité de l'effet */
+  animation: scan 10s linear infinite;
+}
+
+/* Animation pour l'effet "scanline" */
+@keyframes scan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+/* Effet de "glow" (lueur) sur le texte */
+.text-glow {
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+/* Style pour la barre de défilement */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #33ff33;
+}
+
+* {
+  user-select: none;
+}
+
+/* Mobile behavior: when a message is opened on small screens, hide the list and expand the message */
+@media (max-width: 767px) {
+  body.mobile-open #email-list-column {
+    display: none;
+  }
+
+  body.mobile-open #email-content {
+    display: flex !important;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  body.mobile-open #welcome-message {
+    display: none !important;
+  }
+}
+
